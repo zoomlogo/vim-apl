@@ -55,7 +55,7 @@ loadkeymap
 `l    ⎕    Evaluated input, Output with a newline
 `L    ⍞    Character input, Bare output
 `1    ¨    Each
-`j    ∘.   Outer product
+`j    ∘    Outer product
 "     /    Reduce
 `/    ⌿    1st axis reduce
 "     \\   Scan
