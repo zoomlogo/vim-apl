@@ -44,8 +44,8 @@ loadkeymap
 `z    ⊂    Enclose, Partition
 `x    ⊃    Disclose, Pick
 `I    ⌷    Index
-`g    ⍋    Grade up
-`h    ⍒    Grade down
+`G    ⍒    Grade down
+`H    ⍋    Grade up
 `n    ⊤    Decode
 `b    ⊥    Encode
 `N    ⍕    Format, Format by specification
@@ -68,6 +68,8 @@ loadkeymap
 `;    ◇    Statement separator
 `a    ⍺    Left formal parameter
 `w    ⍵    Right formal parameter
+`g    ∇    Del
+`h    ∆    Upwards pointing triangle
 `<    «    Embedded script start (left guillemet)
 `>    »    Embedded script end (right guillemet)
 ``    `    Literal backquote
