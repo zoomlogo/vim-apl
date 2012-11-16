@@ -13,7 +13,7 @@ syn match aplInvalid /./
 syn match aplWhitespace /\s\+/
 syn match aplComment /[⍝#].*$/
 syn match aplStatementSeparator /◇/
-syn match aplNumber /\c¯\?\%(0x\x\+\|\d*\.\?\d\+\(e[+¯]\?\d\+\)\?\)\%(j¯\?\%(0x\x\+\|\d*\.\?\d\+\%(e[+¯]\?\d\+\)\?\)\)\?/
+syn match aplNumber /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯))?/
 syn match aplNumberJ /\cj/ containedin=aplNumber " for complex number, separator between Re and Im
 syn region aplString matchgroup=aplStringDelimiter start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=aplStringSpecial
 syn region aplString matchgroup=aplStringDelimiter start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=aplStringSpecial
