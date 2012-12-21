@@ -25,6 +25,8 @@ syn match aplNiladicFunction /⍬/
 syn match aplIndex /[\[\];]/
 syn region aplParen matchgroup=aplParenDelimiter start=/(/ end=/)/ contains=ALL
 syn region aplLambda matchgroup=aplLambdaDelimiter start=/{/ end=/}/ contains=ALL
+syn match aplRecursion /∇/
+syn match aplGuard /:/
 syn match aplIdentifier /[A-Za-z_][A-Za-z_0-9]*/
 syn match aplIdentifier /[⎕⍞]/
 syn match aplArrow /←/
@@ -55,6 +57,8 @@ if version >= 508 || !exists('did_coffee_syn_inits')
   HiLink aplIndex               Delimiter
   HiLink aplInvalid             Error
   HiLink aplLambdaDelimiter     Special
+  HiLink aplRecursion           Special
+  HiLink aplGuard               Special
   HiLink aplNiladicFunction     Constant
   HiLink aplNumber              Constant
   HiLink aplNumberJ             Special
