@@ -9,7 +9,6 @@ endif
 
 syn case match
 
-syn match aplInvalid /./
 syn match aplWhitespace /\s\+/
 syn match aplComment /[⍝#].*$/
 syn match aplStatementSeparator /[◇⋄]/
@@ -55,7 +54,6 @@ if version >= 508 || !exists('did_coffee_syn_inits')
   HiLink aplFormalParameter     Special
   HiLink aplIdentifier          Normal
   HiLink aplIndex               Delimiter
-  HiLink aplInvalid             Error
   HiLink aplLambdaDelimiter     Special
   HiLink aplRecursion           Special
   HiLink aplGuard               Special
