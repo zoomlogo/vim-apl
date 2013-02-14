@@ -29,8 +29,10 @@ syn match aplGuard /:/
 syn match aplIdentifier /[A-Za-z_][A-Za-z_0-9]*/
 syn match aplIdentifier /[⎕⍞]/
 syn match aplArrow /←/
-syn region aplEmbedded matchgroup=aplEmbeddedDelimiter start=/«/ end=/»/ contains=@aplJS
-syn include @aplJS syntax/javascript.vim
+if b:current_syntax ==# 'apl'
+  syn region aplEmbedded matchgroup=aplEmbeddedDelimiter start=/«/ end=/»/ contains=@aplJS
+  syn include @aplJS syntax/javascript.vim
+endif
 
 syn sync fromstart
 syn sync maxlines=1000
