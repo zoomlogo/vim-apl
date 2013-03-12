@@ -23,7 +23,7 @@ loadkeymap
 `7    >    Greater than
 `8    ≠    Not equal
 `_    ≡    Depth, Match
-"     ≢    Not match
+`+    ≢    Not match
 `e    ∈    Enlist, Membership
 `E    ⍷    Find
 `v    ∪    Unique, Union
@@ -70,6 +70,7 @@ loadkeymap
 `w    ⍵    Right formal parameter
 `g    ∇    Del
 `h    ∆    Upwards pointing triangle
+`S    ⍨    Commute
 `<    «    Embedded script start (left guillemet)
 `>    »    Embedded script end (right guillemet)
 ``    `    Literal backquote
