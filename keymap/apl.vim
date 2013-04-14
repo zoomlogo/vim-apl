@@ -11,7 +11,7 @@ loadkeymap
 `m    ∣    Absolute value, Residue
 `i    ⍳    Index generator, Index of
 "     ?    Roll, Deal
-`p    ⋆    Exponential, To the power of
+`p    *    Exponential, To the power of
 `P    ⍟    Natural logarithm, Logarithm to the base
 `o    ○    Pi times, Circular and hyperbolic functions
 "     !    Factorial, Binomial
