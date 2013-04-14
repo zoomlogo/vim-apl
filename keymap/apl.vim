@@ -24,7 +24,7 @@ loadkeymap
 `8    ≠    Not equal
 `_    ≡    Depth, Match
 `+    ≢    Not match
-`e    ∈    Enlist, Membership
+`e    ∊    Enlist, Membership
 `E    ⍷    Find
 `v    ∪    Unique, Union
 `c    ∩    Intersection
