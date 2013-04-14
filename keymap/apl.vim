@@ -28,7 +28,7 @@ loadkeymap
 `E    ⍷    Find
 `v    ∪    Unique, Union
 `c    ∩    Intersection
-`t    ∼    Not, Without
+"     ~    Not, Without
 `9    ∨    Or
 `0    ∧    And
 `(    ⍱    Nor
