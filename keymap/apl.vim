@@ -3,7 +3,7 @@ let b:keymap_name = 'apl'
 loadkeymap
 
 "     +    Conjugate, Add
-`-    −    Negate, Subtract
+"     -    Negate, Subtract
 `=    ×    Sign of, Multiply
 `:    ÷    Reciprocal, Divide
 `s    ⌈    Ceiling, Greater of
