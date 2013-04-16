@@ -65,7 +65,7 @@ loadkeymap
 `C    ⍝    Comment
 `[    ←    Assignment
 `O    ⍬    Zilde
-`;    ◇    Statement separator
+`;    ⋄    Statement separator
 `a    ⍺    Left formal parameter
 `w    ⍵    Right formal parameter
 `g    ∇    Del
