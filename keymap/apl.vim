@@ -15,7 +15,7 @@ loadkeymap
 `P    ⍟    Natural logarithm, Logarithm to the base
 `o    ○    Pi times, Circular and hyperbolic functions
 "     !    Factorial, Binomial
-"     ⌹    Matrix inverse, Matrix divide
+`D    ⌹    Matrix inverse, Matrix divide, Variant operator
 `3    <    Less than
 `4    ≤    Less than or equal
 `5    =    Equal
