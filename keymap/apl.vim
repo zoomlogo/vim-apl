@@ -16,6 +16,7 @@ loadkeymap
 `o    ○    Pi times, Circular and hyperbolic functions
 "     !    Factorial, Binomial
 `D    ⌹    Matrix inverse, Matrix divide, Variant operator
+`F    ⍠    Variant operator
 `3    <    Less than
 `4    ≤    Less than or equal
 `5    =    Equal
