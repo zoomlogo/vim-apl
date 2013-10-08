@@ -28,6 +28,7 @@ syn match aplRecursion /∇/
 syn match aplGuard /:/
 syn match aplIdentifier /[A-Za-z_][A-Za-z_0-9]*/
 syn match aplIdentifier /[⎕⍞]/
+syn match aplQuadIdentifier /⎕[A-Za-z0-9]\+/
 syn match aplArrow /←/
 if !exists('b:current_syntax') || b:current_syntax ==# 'apl'
   syn region aplEmbedded matchgroup=aplEmbeddedDelimiter start=/«/ end=/»/ contains=@aplJS
@@ -64,6 +65,7 @@ if version >= 508 || !exists('did_coffee_syn_inits')
   HiLink aplNumberJ             Special
   HiLink aplOperator            Type
   HiLink aplParenDelimiter      Delimiter
+  HiLink aplQuadIdentifier      Special
   HiLink aplStatementSeparator  Statement
   HiLink aplStringDelimiter     Delimiter
   HiLink aplStringSpecial       Special
