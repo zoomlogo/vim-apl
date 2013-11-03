@@ -1,5 +1,4 @@
-setlocal commentstring=⍝%s
-setlocal keymap=apl
+setlocal commentstring=⍝%s keymap=apl shiftwidth=2 tabstop=2 softtabstop=2
 
 inoreabbrev <buffer> <silent> # <C-R>=<SID>HashBang()<CR>
 function! <SID>HashBang()
