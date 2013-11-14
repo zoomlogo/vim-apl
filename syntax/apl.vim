@@ -9,7 +9,6 @@ endif
 
 syn case match
 
-syn match aplWhitespace /\s\+/
 syn match aplComment /[⍝#].*$/
 syn match aplStatementSeparator /[◇⋄]/
 syn match aplNumber /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯))?/
