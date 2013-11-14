@@ -17,7 +17,7 @@ syn match aplNumberJ /\cj/ containedin=aplNumber " for complex number, separator
 syn region aplString matchgroup=aplStringDelimiter start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=aplStringSpecial
 syn region aplString matchgroup=aplStringDelimiter start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=aplStringSpecial
 syn match aplStringSpecial /\\[0-7]\{1,3}\|\\x\x\x\|\\u[0-9A-Fa-f]\{4}\|\\./ contained
-syn match aplOperator /[\.\\\/⌿⍀¨⍣⍨⍠⍤]/
+syn match aplOperator /[\.\\\/⌿⍀¨⍣⍨⍠⍤∘]/
 syn match aplFunction /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]/
 syn match aplFormalParameter /[⍺⍵⍶⍹]/
 syn match aplNiladicFunction /⍬/
