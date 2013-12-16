@@ -13,9 +13,8 @@ syn match aplComment /[⍝#].*$/
 syn match aplStatementSeparator /[◇⋄]/
 syn match aplNumber /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 syn match aplNumberJ /\cj/ containedin=aplNumber " for complex number, separator between Re and Im
-syn region aplString matchgroup=aplStringDelimiter start=/"/ skip=/\\\\\|\\"/ end=/"/ contains=aplStringSpecial
-syn region aplString matchgroup=aplStringDelimiter start=/'/ skip=/\\\\\|\\'/ end=/'/ contains=aplStringSpecial
-syn match aplStringSpecial /\\[0-7]\{1,3}\|\\x\x\x\|\\u[0-9A-Fa-f]\{4}\|\\./ contained
+syn region aplString matchgroup=aplStringDelimiter start=/"/ end=/"/
+syn region aplString matchgroup=aplStringDelimiter start=/'/ end=/'/
 syn match aplOperator /[\.\\\/⌿⍀¨⍣⍨⍠⍤∘]/
 syn match aplFunction /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]/
 syn match aplFormalParameter /[⍺⍵⍶⍹]/
@@ -67,7 +66,6 @@ if version >= 508 || !exists('did_coffee_syn_inits')
   HiLink aplQuadIdentifier      Special
   HiLink aplStatementSeparator  Statement
   HiLink aplStringDelimiter     Delimiter
-  HiLink aplStringSpecial       Special
   HiLink aplString              String
 
   delcommand HiLink
