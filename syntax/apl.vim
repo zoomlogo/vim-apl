@@ -1,77 +1,55 @@
-if !exists('main_syntax')
-  if version < 600
-    syntax clear
-  elseif exists('b:current_syntax')
-    finish
-  endif
-  let main_syntax = 'apl'
-endif
+if exists('b:current_syntax') | fini | en
 
-syn case match
+sy case match
 
-syn match aplComment /[⍝#].*$/
-syn match aplStatementSeparator /[◇⋄]/
-syn match aplNumber /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
-syn match aplNumberJ /\cj/ containedin=aplNumber " for complex number, separator between Re and Im
-syn region aplString matchgroup=aplStringDelimiter start=/"/ end=/"/
-syn region aplString matchgroup=aplStringDelimiter start=/'/ end=/'/
-syn match aplOperator /[\.\\\/⌿⍀¨⍣⍨⍠⍤∘]/
-syn match aplFunction /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]/
-syn match aplFormalParameter /[⍺⍵⍶⍹]/
-syn match aplNiladicFunction /⍬/
-syn match aplIndex /[[\];]/
-syn region aplParen matchgroup=aplParenDelimiter start=/(/ end=/)/ contains=ALL
-syn region aplLambda matchgroup=aplLambdaDelimiter start=/{/ end=/}/ contains=ALL
-syn match aplRecursion /∇/
-syn match aplGuard /:/
-syn match aplIdentifier /[A-Za-z_][A-Za-z_0-9]*/
-syn match aplIdentifier /[⎕⍞]/
-syn match aplQuadIdentifier /⎕[A-Za-z0-9]\+/
-syn match aplArrow /←/
+sy match  aplComment /[⍝#].*$/
+sy match  aplStatementSeparator /[◇⋄]/
+sy match  aplNumber /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
+sy match  aplNumberJ /\cj/ containedin=aplNumber " for complex number, separator between Re and Im
+sy region aplString matchgroup=aplStringDelimiter start=/"/ end=/"/
+sy region aplString matchgroup=aplStringDelimiter start=/'/ end=/'/
+sy match  aplOperator /[\.\\\/⌿⍀¨⍣⍨⍠⍤∘]/
+sy match  aplFunction /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]/
+sy match  aplZilde /⍬/
+sy match  aplIndex /[[\];]/
+sy match  aplParen /[()]/
+
+sy match  aplIdentifier /[A-Za-z_][A-Za-z_0-9]*/
+sy match  aplIdentifier /[⎕⍞]/
+sy match  aplQuadIdentifier /⎕[A-Za-z0-9]\+/
+sy match  aplArrow /←/
 if !exists('b:current_syntax') || b:current_syntax ==# 'apl'
-  syn region aplEmbedded matchgroup=aplEmbeddedDelimiter start=/«/ end=/»/ contains=@aplJS
-  syn include @aplJS syntax/javascript.vim
-endif
+  sy region aplEmbedded matchgroup=aplEmbeddedDelimiter start=/«/ end=/»/ contains=@aplJS
+  sy include @aplJS syntax/javascript.vim
+en
 
-syn sync fromstart
-syn sync maxlines=1000
+sy sync fromstart
 
-" Define the default highlighting.
-" For version 5.7 and earlier: only when not done already
-" For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists('did_coffee_syn_inits')
+com! -nargs=+ HL hi def link <args>
+HL aplArrow               Statement
+HL aplComment             Comment
+HL aplEmbeddedDelimiter   Special
+HL aplFunction            Function
+HL aplIdentifier          Normal
+HL aplIndex               Delimiter
+HL aplZilde               Constant
+HL aplNumber              Constant
+HL aplNumberJ             Special
+HL aplOperator            Type
+HL aplParen               Delimiter
+HL aplQuadIdentifier      Special
+HL aplStatementSeparator  Statement
+HL aplStringDelimiter     Delimiter
+HL aplString              String
 
-  if version < 508
-    let did_coffee_syn_inits = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
+" Rainbow colouring for {⍺⍵}
+let n = 10 " max nesting
+for i in reverse(range(n))
+  exe 'sy region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,'.join(map(range(n), '"apl".("BL"[v:val>i]).v:val'), ',')
+  exe 'sy match aplL'.(n - i - 1).' /[⍺⍵⍶⍹∇:]/'
+  exe 'hi def link aplL'.i.' Special'
+endfor
 
-  HiLink aplArrow               Statement
-  HiLink aplComment             Comment
-  HiLink aplEmbeddedDelimiter   Special
-  HiLink aplFunction            Function
-  HiLink aplFormalParameter     Special
-  HiLink aplIdentifier          Normal
-  HiLink aplIndex               Delimiter
-  HiLink aplLambdaDelimiter     Special
-  HiLink aplRecursion           Special
-  HiLink aplGuard               Special
-  HiLink aplNiladicFunction     Constant
-  HiLink aplNumber              Constant
-  HiLink aplNumberJ             Special
-  HiLink aplOperator            Type
-  HiLink aplParenDelimiter      Delimiter
-  HiLink aplQuadIdentifier      Special
-  HiLink aplStatementSeparator  Statement
-  HiLink aplStringDelimiter     Delimiter
-  HiLink aplString              String
-
-  delcommand HiLink
-endif
-
+unl n i
+delc HL
 let b:current_syntax = 'apl'
-if main_syntax == 'apl'
-  unlet main_syntax
-endif
