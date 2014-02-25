@@ -1,6 +1,6 @@
-scriptencoding utf-8
+scripte utf-8
 let b:keymap_name = 'apl'
-loadkeymap
+loadk
 
 ``  `
 `1  ¨

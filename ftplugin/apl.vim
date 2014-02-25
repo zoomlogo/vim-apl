@@ -1,7 +1,7 @@
-setlocal commentstring=⍝%s keymap=apl shiftwidth=2 tabstop=2 softtabstop=2
+setl cms=⍝%s kmp=apl sw=2 ts=2 sts=2
 
-inoreabbrev <buffer> <silent> # <C-R>=<SID>HashBang()<CR>
-function! <SID>HashBang()
-    let ch = nr2char(getchar(0))
-    return (ch ==# '!') ? "#!/usr/bin/env apl\<CR>\<CR>" : ('#' . ch)
-endfunction
+inorea <buffer> <silent> # <c-r>=<sid>hb()<cr>
+fu! s:hb()
+  let ch = nr2char(getchar(0))
+  retu ch ==# '!' ? "#!/usr/bin/env apl\<cr>\<cr>" : ('#'.ch)
+endf
