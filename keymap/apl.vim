@@ -1,98 +1,16 @@
 scripte utf-8
-let b:keymap_name = 'apl'
-loadk
+let b:keymap_name = expand('<sfile>:t:r')
 
-``  `
-`1  ¨
-`2  ¯
-`3  <
-`4  ≤
-`5  =
-`6  ≥
-`7  >
-`8  ≠
-`9  ∨
-`0  ∧
-`-  ÷
-`=  ×
-`q  q
-`w  ⍵
-`e  ∊
-`r  ⍴
-`t  ~
-`y  ↑
-`u  ↓
-`i  ⍳
-`o  ○
-`p  ⍟
-`[  ←
-`]  →
-`\\ ⍀
-`a  ⍺
-`s  ⌈
-`d  ⌊
-`f  f
-`g  ∇
-`h  ∆
-`j  ∘
-`k  k
-`l  ⎕
-`;  ⋄
-`'  '
-`z  ⊂
-`x  ⊃
-`c  ∩
-`v  ∪
-`b  ⊥
-`n  ⊤
-`m  ∣
-`,  ⍪
-`.  .
-`/  ⌿
-`~  ⍨
-`!  ∞
-`@  ⍁
-`#  ⍂
-`$  ⍠
-`%  ≈
-`^  ⌸
-`&  ⍯
-`*  ⍣
-`(  ⍱
-`)  ⍲
-`_  ≢
-`+  ≡
-`Q  ⌹
-`W  ⍹
-`E  ⍷
-`R  ⍤
-`T  T
-`Y  Y
-`U  ⊖
-`I  ⍸
-`O  ⍬
-`P  ⌽
-`{  ⊣
-`}  ⊢
-`|  ⍉
-`A  ⍶
-`S  S
-`D  D
-`F  F
-`G  ⍒
-`H  ⍋
-`J  ⍝
-`K  K
-`L  ⍞
-`:  :
-`"  "
-`Z  ⊆
-`X  ⊇
-`C  ⋔
-`V  ⍦
-`B  ⍎
-`N  ⍕
-`M  ⌷
-`<  «
-`>  »
-`?  ↗
+let a  = '`1234567890-= ~!@#$%^&*()_+'
+let a .= 'qwertyuiop[]  QWERTYUIOP{} '
+let a .= 'asdfghjkl;''\ ASDFGHJKL:"| '
+let a .= 'zxcvbnm,./    ZXCVBNM<>?   '
+
+let b  = '`¨¯<≤=≥>≠∨∧÷× ⍨∞⍁⍂⍠≈⌸⍯⍣⍱⍲≢≡'
+let b .= 'q⍵∊⍴~↑↓⍳○⍟←→  ⌹⍹⍷⍤T⌶⊖⍸⍬⌽⊣⊢ '
+let b .= '⍺⌈⌊f∇∆∘k⎕⋄''⍀ ⍶SDF⍒⍋⍝K⍞:"⍉ '
+let b .= '⊂⊃∩∪⊥⊤∣⍪.⌿    ⊆⊇⋔⍦⍎⍕⌷«»↗   '
+
+let [A, B] = map([a, b], "split(v:val,'\\zs *')")
+for i in range(len(A)) | exe escape('ln<buffer>`'.A[i].' '.B[i], '|\') | endfor
+unl a b A B i

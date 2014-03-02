@@ -1,0 +1,236 @@
+# symbol      type  description
+
+# quad names
+⎕á            | N | underscored alphabet
+⎕a            | N | alphabet 'ABC⋯Z'
+⎕ai           | N | account information
+⎕an           | N | account name
+⎕arbin        | v | arbitrary input
+⎕arbout       | v | arbitrary output
+⎕at           | v | attributes
+⎕av           | N | atomic vector
+⎕avu          | N | unicode atomic vector
+⎕base         | N | base class
+⎕class        | v | class
+⎕clear        | n | clear workspace
+⎕cmd          | v | execute Windows command/start AP
+⎕cr           | v | canonical representation
+⎕cs           | v | change space
+⎕ct           | n | comparison tolerance
+⎕cy           | v | copy workspace
+⎕d            | N | digits '0123456789'
+⎕dct          | n | decimal comparison tolerance
+⎕df           | v | display form
+⎕div          | n | division method
+⎕dl           | v | delay
+⎕dm           | n | diagnostic message
+⎕dmx          | n | diagnostic message
+⎕dq           | v | dequeue events
+⎕dr           | v | data representation
+⎕ed           | v | edit object
+⎕em           | v | event message
+⎕en           | v | event number
+⎕ex           | v | expunge object
+⎕exception    | N | exception
+⎕export       | v | export object
+⎕fappend      | v | file append component
+⎕favail       | v | file available
+⎕fchk         | v | file check and repair
+⎕fcopy        | v | file copy
+⎕fcreate      | v | file create
+⎕fdrop        | v | file drop component
+⎕ferase       | v | file erase
+⎕fhold        | v | file hold
+⎕fix          | v | fix script
+⎕flib         | v | file library
+⎕fmt          | v | format
+⎕fnames       | n | file names
+⎕fnums        | n | file numbers
+⎕fprops       | v | file properties
+⎕fr           | n | floating-point representation
+⎕frdac        | v | file read access matrix
+⎕frdci        | v | file read component information
+⎕fread        | v | file read component
+⎕frename      | v | file rename
+⎕freplace     | v | file replace component
+⎕fresize      | v | file resize
+⎕fsize        | v | file size
+⎕fstac        | v | file set access matrix
+⎕fstie        | v | file share tie
+⎕ftie         | v | file tie
+⎕funtie       | v | file untie
+⎕fx           | v | fix definition
+⎕instances    | v | instances
+⎕io           | n | index origin
+⎕kl           | v | key label
+⎕lc           | N | line counter
+⎕load         | v | load workspace
+⎕lock         | v | lock definition
+⎕lx           | n | latent expression
+⎕map          | v | map file
+⎕ml           | n | migration level
+⎕monitor      | v | monitor
+⎕na           | v | name association
+⎕nappend      | v | native file append
+⎕nc           | v | name class
+⎕ncreate      | v | native file create
+⎕nerase       | v | native file erase
+⎕new          | v | new instance
+⎕nl           | v | name list
+⎕nlock        | v | native file lock
+⎕nnames       | n | native file names
+⎕nnums        | n | native file numbers
+⎕nq           | v | enqueue event
+⎕nr           | v | nested representation
+⎕nread        | v | native file read
+⎕nrename      | v | native file rename
+⎕nreplace     | v | native file replace
+⎕nresize      | v | native file resize
+⎕ns           | v | namespace
+⎕nsi          | n | namespace indicator
+⎕nsize        | v | native file size
+⎕ntie         | v | native file tie
+⎕null         | N | null item
+⎕nuntie       | v | native file untie
+⎕nxlate       | v | native file translate
+⎕off          | n | sign off APL
+⎕or           | v | object representation
+⎕opt          | c | variant operator (⍠)
+⎕path         | n | search path
+⎕pfkey        | v | program function key
+⎕pp           | n | print precision
+⎕profile      | v | profile application
+⎕pw           | n | print width
+⎕refs         | v | cross references
+⎕r            | c | replace
+⎕rl           | n | random link
+⎕rtl          | n | response time limit
+⎕s            | c | search
+⎕save         | v | save workspace
+⎕sd           | N | screen dimensions
+⎕se           | n | session namespace
+⎕sh           | v | execute shell command/start AP
+⎕shadow       | v | shadow name
+⎕si           | n | state indicator
+⎕signal       | v | signal event
+⎕size         | v | size of object
+⎕sm           | n | screen map
+⎕sr           | v | screen read
+⎕src          | v | source
+⎕stack        | n | state indicator stack
+⎕state        | v | state of object
+⎕stop         | v | stop control
+⎕svc          | v | shared variable control
+⎕svo          | v | shared variable offer
+⎕svq          | v | shared variable query
+⎕svr          | v | shared variable retract
+⎕svs          | v | shared variable state
+⎕tc           | N | terminal control
+⎕tcnums       | v | thread child numbers
+⎕tget         | v | get tokens
+⎕this         | N | this space
+⎕tid          | N | thread identity
+⎕tkill        | v | thread kill
+⎕tname        | N | thread name
+⎕tnums        | N | thread numbers
+⎕tpool        | N | token pool
+⎕tput         | v | put tokens
+⎕treq         | v | token requests
+⎕trace        | v | trace control
+⎕trap         | n | trap event
+⎕ts           | n | time stamp
+⎕tsync        | v | threads synchronise
+⎕ucs          | v | Unicode convert
+⎕using        | n | using path
+⎕vfi          | v | verify and fix input
+⎕vr           | v | vector representation
+⎕wa           | n | workspace available
+⎕wc           | v | window create object
+⎕wg           | v | window get property
+⎕wn           | v | window child names
+⎕ws           | v | window set property
+⎕wsid         | n | workspace identification
+⎕wx           | n | window expose names
+⎕xml          | v | extended state indicator
+⎕xsi          | n | extended state indicator
+⎕xt           | v | external variable
+
+# system commands
+#   )0 no arg
+#   )1 optional arg
+#   )2 required arg
+)classes      | )0| list classes
+)clear        | )0| clear the workspace
+)cmd          | )2| execute a Windows command
+)continue     | )0| save a continue workspace and terminate APL
+)copy         | )1| copy objects from another workspace
+)cs           | )1| change current namespace
+)drop         | )1| drop named workspace
+)ed           | )2| edit object(s)
+)erase        | )2| erase object(s)
+)events       | )0| list events of GUI namespace or object
+)fns          | )1| list user defined functions
+)holds        | )0| display held tokens
+)lib          | )1| list workspaces in a directory
+)load         | )1| load a workspace
+)methods      | )0| list methods in gui namespace or object
+)ns           | )1| create a global namespace
+)objects      | )1| list global namespaces
+)obs          | )1| list global namespaces (alternative form)
+)off          | )0| terminate the APL session
+)ops          | )1| list user defined operators
+)pcopy        | )1| perform protected copy of objects
+)props        | )0| list properties of gui namespace or object
+)reset        | )0| reset the state indicator
+)save         | )1| save the workspace
+)sh           | )1| execute a (Unix) shell command
+)si           | )0| state indicator
+)sic          | )0| clear state indicator
+)sinl         | )0| state indicator with local name lists
+)tid          | )1| switch current thread identity
+)vars         | )1| list user defined global variables
+)wsid         | )1| workspace identification
+)xload        | )2| load a workspace; do not execute ⎕lx
+
+# keywords
+:AndIf        | k |
+:Access       | k |
+:Case         | k |
+:CaseList     | k |
+:Class        | k |
+:Continue     | k |
+:Else         | k |
+:ElseIf       | k |
+:End          | k |
+:EndClass     | k |
+:EndFor       | k |
+:EndHold      | k |
+:EndIf        | k |
+:EndNamespace | k |
+:EndProperty  | k |
+:EndRepeat    | k |
+:EndSelect    | k |
+:EndTrap      | k |
+:EndWhile     | k |
+:EndWith      | k |
+:Field        | k |
+:For          | k |
+:In           | k |
+:GoTo         | k |
+:Hold         | k |
+:Include      | k |
+:If           | k |
+:Implements   | k |
+:Interface    | k |
+:Leave        | k |
+:Namespace    | k |
+:OrIf         | k |
+:Property     | k |
+:Repeat       | k |
+:Return       | k |
+:Section      | k |
+:Select       | k |
+:Trap         | k |
+:Until        | k |
+:While        | k |
+:With         | k |
