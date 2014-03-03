@@ -47,3 +47,19 @@ fu apl#help()
     echoh errormsg | ec 'no help available for '.c | echoh none
   en
 endf
+
+fu apl#identifierUnderCursor()
+  let [s, n, k] = [getline('.'), col('.')-1, '[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]']
+  let l = substitute(strpart(s, 0, n), '\v^.{-}('.k.'*)$', '\1', '')
+  let r = substitute(strpart(s, n),    '\v^('.k.'*).{-}$', '\1', '')
+  retu l.r
+endf
+
+fu apl#localise()
+  let x = apl#identifierUnderCursor()
+  let i = line('.') | wh i && getline(i) !~ '^\s*∇' | let i = i - 1 | endw
+  if !i | echoh errormsg | ec 'not inside a tradfn' | echoh none | retu | en
+  let s = getline(i)
+  let s1 = substitute(s, '\v\s*;\s*'.x.'\s*(;|$)', '\1', '')
+  cal setline(i, s==#s1 ? s.';'.x : s1)
+endf
