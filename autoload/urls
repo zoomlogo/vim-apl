@@ -1,0 +1,69 @@
+prefix	http://help.dyalog.com/13.2/Content/Language/Symbols/
+suffix	.htm
+
+&	Ampersand
+ 	Brackets
+⊖	Circle Bar
+⌽	Circle Stile
+○	Circle
+⍪	Comma Bar
+,	Comma
+⊥	Decode Symbol
+⍨	Dieresis Tilde
+¨	Dieresis
+⍣	DieresisStar
+÷	Divide Sign
+⌹	Domino
+.	Dot
+↓	Down Arrow
+⌊	Downstile
+⊤	Encode Symbol
+⍷	Epsilon Underbar
+∊	Epsilon
+=	Equal Sign
+≢	Equal Underbar Slash
+≡	Equal Underbar
+!	Exclamation Mark
+⍎	Execute Symbol
+⍒	Grade Down
+⍋	Grade Up
+≥	Greater Than Or Equal To Sign
+>	Greater Than Sign
+⌶	IBeam
+⌷	Index Symbol
+⍳	Iota
+∘	Jot
+⊂	Left Shoe
+⊣	Left Tack
+≤	Less Than Or Equal To Sign
+<	Less Than Sign
+⍟	Log
+∧	Logical And
+∨	Logical Or
+-	Minus Sign
+⍲	Nand Symbol
+⍱	Nor Symbol
+≠	Not Equal To
++	Plus Sign
+?	Question Mark
+⍴	Rho
+→	Right Arrow
+⊃	Right Shoe
+⊢	Right Tack
+∩	Set Intersection
+∪	Set Union
+⌿	Slash Bar
+/	Slash
+⍀	Slope Bar
+\	Slope
+ 	Special Symbols
+*	Star
+|	Stile
+⍕	Thorn Symbol
+~	Tilde
+×	Times Sign
+⍉	Transpose
+↑	Up Arrow
+⌈	Upstile
+⍠	Variant
+⍬	Zilde Symbol

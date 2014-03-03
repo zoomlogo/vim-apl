@@ -28,3 +28,22 @@ fu apl#hashbang()
   let ch = nr2char(getchar(0))
   retu ch=='!' ? "#!/usr/bin/env apl\<cr>\<cr>" : ('#'.ch)
 endf
+
+let s:u = {} " help URLs
+let s:uf = expand('<sfile>:p:h').'/urls'
+fu apl#help()
+  if empty(s:u)
+    for l in readfile(s:uf)
+      if l !~ '^\s' && l != ''
+        let [x, y] = split(l, "\t")
+        let s:u[x] = y
+      en
+    endfor
+  en
+  let c = substitute(getline('.')[col('.')-1:], '\v^(.).*$', '\1', '') " char at cursor
+  if has_key(s:u, c)
+    exe '!gnome-www-browser '.shellescape(s:u['prefix'].s:u[c].s:u['suffix'], '%')
+  el
+    echoh errormsg | ec 'no help available for '.c | echoh none
+  en
+endf
