@@ -24,7 +24,7 @@ sy match aplqid /[⎕⍞]/
 let n = 10 " max nesting
 for i in reverse(range(n))
   exe 'sy region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,'.join(map(range(n), '"apl".("BL"[v:val>i]).v:val'), ',')
-  exe 'sy match aplL'.(n - i - 1).' /[⍺⍵⍶⍹∇:]/'
+  exe 'sy match aplL'.(n - i - 1).' /[⍺⍵⍶⍹∇⍫:]/'
   exe 'hi def link aplL'.i.' Special'
 endfor
 unl n i
