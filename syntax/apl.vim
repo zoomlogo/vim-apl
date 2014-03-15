@@ -10,7 +10,7 @@ sy region aplstr start=/"/ end=/"/
 sy region aplstr start=/'/ skip=/''/ end=/'/ contains=aplquo
 sy match aplquo /''/
 sy match apladv /[\\\/⌿⍀¨⍨⌶]/
-sy match aplcnj /[\.⍣⍠⍤∘⌸]/
+sy match aplcnj /[.⍣⍠⍤∘⌸]/
 sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤&]/
 sy match aplzld /⍬/
 sy match aplind /[[\];]/
