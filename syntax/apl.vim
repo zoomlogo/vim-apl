@@ -9,9 +9,9 @@ sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\
 sy region aplstr start=/"/ end=/"/
 sy region aplstr start=/'/ skip=/''/ end=/'/ contains=aplquo
 sy match aplquo /''/
-sy match apladv /[\\\/⌿⍀¨⍨⌶]/
+sy match apladv /[\\\/⌿⍀¨⍨⌶&]/
 sy match aplcnj /[.⍣⍠⍤∘⌸]/
-sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤&]/
+sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤]/
 sy match aplzld /⍬/
 sy match aplind /[[\];]/
 sy match aplpar /[()]/
