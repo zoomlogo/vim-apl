@@ -7,8 +7,8 @@ sy match aplerr /[(){}\[\]]/
 sy match aplsep /[◇⋄]/
 sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 sy region aplstr start=/"/ end=/"/
-sy region aplstr start=/'/ skip=/''/ end=/'/ contains=aplquo
-sy match aplquo /''/
+sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
+sy match aplquo /''/ contained
 sy match apladv /[\\\/⌿⍀¨⍨⌶&]/
 sy match aplcnj /[.⍣⍠⍤∘⌸]/
 sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤]/
