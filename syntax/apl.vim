@@ -5,7 +5,6 @@ sy case match
 
 sy match aplerr /[(){}\[\]]/
 sy match aplsep /[◇⋄]/
-sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 sy region aplstr start=/"/ end=/"/
 sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
 sy match aplquo /''/ contained
@@ -16,6 +15,7 @@ sy match aplzld /⍬/
 sy match aplind /[[\];]/
 sy match aplpar /[()]/
 sy match aplnsp /#/
+sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 
 sy match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
 sy match aplqid /[⎕⍞]/
