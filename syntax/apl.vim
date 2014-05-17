@@ -8,10 +8,11 @@ sy match aplsep /[◇⋄]/
 sy region aplstr start=/"/ end=/"/
 sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
 sy match aplquo /''/ contained
-sy match apladv /[\\\/⌿⍀¨⍨⌶&]/
+sy match apladv /[\\\/⌿⍀¨⍨⌶&∥]/
 sy match aplcnj /[.⍣⍠⍤∘⌸]/
 sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤]/
 sy match aplzld /⍬/
+sy match apltgt /⊚/
 sy match aplind /[[\];]/
 sy match aplpar /[()]/
 sy match aplnsp /#/
@@ -74,6 +75,7 @@ HL aplquo specialchar
 HL aplcmd preproc
 HL aplvrb function
 HL aplzld constant
+HL apltgt constant
 delc HL
 
 let b:current_syntax = 'apl'
