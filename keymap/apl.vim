@@ -12,5 +12,5 @@ let b .= '⍺⌈⌊⍫∇∆∘k⎕⋄''⍀ ⍶SDF⍒⍋⍝K⍞:"⍉ '
 let b .= '⊂⊃∩∪⊥⊤∣⍪.⌿    ⊆⊇⋔⍦⍎⍕⌷«»↗   '
 
 let [A, B] = map([a, b], "split(v:val,'\\zs *')")
-for i in range(len(A)) | exe escape('ln<buffer>`'.A[i].' '.B[i], '|\') | endfor
+for i in range(len(A)) | exe escape('ln<buffer>`'.A[i].' '.B[i], '|') | endfor
 unl a b A B i
