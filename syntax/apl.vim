@@ -40,7 +40,7 @@ for [t, hl] in [['N','cns'],['n','qid'],['v','vrb'],['a','adv'],['c','cnj']]
   en
 endfor
 exe 'sy match aplkwd /\v\c((^|◇|⋄)\s*)@<=:('.join(map(copy(ht.k), 'substitute(v:val,"^:","","")'), '|').')>/'
-exe 'sy match aplcmd /\v\c((^|◇|⋄)\s*)@<=\)('.join(map(ht[')0'] + ht[')1'] + ht[')2'], 'substitute(v:val,"^\)","","")'), '|').')>/'
+exe 'sy match aplcmd /\v\c((^|◇|⋄)\s*)@<=\)('.join(map(ht[')0'] + ht[')1'] + ht[')2'], 'substitute(v:val,"^\)","","")'), '|').')>.*$/'
 unl ht t hl
 
 sy match aplarw /←/
