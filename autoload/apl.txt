@@ -209,6 +209,7 @@
 :EndNamespace | k |
 :EndProperty  | k |
 :EndRepeat    | k |
+:EndSection   | k |
 :EndSelect    | k |
 :EndTrap      | k |
 :EndWhile     | k |
