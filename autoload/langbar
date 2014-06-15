@@ -1,0 +1,86 @@
+← assign
+
++ conjugate, add
+- negate, subtract
+× sign, multiply
+÷ reciprocal, divide
+* exp, power
+⍟ ln, logarithm
+⌹ matrix inverse, divide
+○ trigonometric functions
+! factorial, binomial
+? roll, deal
+
+| magnitude, residue
+⌈ maximum, ceiling
+⌊ minimum, floor
+⊥ decode
+⊤ encode
+⊣ same, left
+⊢ same, right
+
+= equal
+≠ not equal
+≤ lesser or equal
+< less than
+> greater than
+≥ greater or equal
+≡ depth, match
+≢ tally, not match
+
+∨ or (GCD)
+∧ and (LCM)
+⍱ nor
+⍲ nand
+
+↑ mix, take
+↓ split, drop
+⊂ enclose, partition
+⊃ disclose, pick
+⌷ index
+⍋ grade up
+⍒ grade down
+
+⍳ indices, index of
+⍷ find
+∪ unique, union
+∩ intersection
+∊ type, membership
+~ not, without
+
+/ reduce
+\ scan
+⌿ reduce 1st
+⍀ scan 1st
+
+, ravel, catenate
+⍪ table, catenate
+⍴ shape of, reshape
+⌽ reverse, rotate
+⊖ reverse 1st, rotate 1st
+⍉ transpose
+
+¨ each
+⍨ switch
+⍣ power
+. inner product
+∘ outer product
+⍤ rank
+
+⍞ raw I/O
+⎕ eval'ed I/O
+⍠ variant
+⌸ key
+⍎ execute
+⍕ format
+
+⋄ separator
+⍝ comment
+→ branch
+⍵ right arg
+⍺ left arg
+∇ recur
+& spawn
+
+¯ negative
+⍬ zilde

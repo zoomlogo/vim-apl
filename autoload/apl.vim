@@ -63,3 +63,22 @@ fu apl#localise()
   let s1 = substitute(s, '\v\s*;\s*'.x.'\s*(;|$)', '\1', '')
   cal setline(i, s==#s1 ? s.';'.x : s1)
 endf
+
+if !has('gui_running') | fini | en
+fu s:init()
+  let k = 0 " counter for menu separators
+  for s in readfile(expand('<sfile>:p:h').'/langbar')
+    if len(s)
+      let [c, d] = matchlist(s, '\v^(\S)\s*(.*)$')[1:2] " character and description
+      let c1 = c == '&' ? '&&' : escape(c, '\\|.')
+      let d1 = escape(d, ' ')
+      let c2 = c == '|' ? '\|' : c
+      exe 'inoremenu &APL.'.c1.'<tab>'.d1.' '.c2
+    el
+      exe 'inoremenu &APL.-apl'.k.'- :'
+      let k += 1
+    en
+  endfor
+endf
+cal s:init()
+delf s:init
