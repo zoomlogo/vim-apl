@@ -3,6 +3,8 @@ let b:did_indent = 1
 
 setl ai inde=APLIndent(v:lnum) indk+=0=~:andif,0=~:else,0=~:end,0=~:orif,0=~:until,0),0]
 
+if exists('*APLIndent') | fini | en
+
 if exists('*shiftwidth')
   let s:sw = function('shiftwidth')
 el
