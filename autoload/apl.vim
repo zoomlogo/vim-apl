@@ -24,11 +24,6 @@ fu apl#complete(findstart, base)
   retu map(r, '{"word":v:val[0],"menu":v:val[2]}')
 endf
 
-fu apl#hashbang()
-  let ch = nr2char(getchar(0))
-  retu ch=='!' ? "#!/usr/bin/env apl\<cr>\<cr>" : ('#'.ch)
-endf
-
 let s:u = {} " help URLs
 let s:uf = expand('<sfile>:p:h').'/urls'
 fu apl#help()
