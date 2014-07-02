@@ -8,8 +8,8 @@ sy match aplsep /[◇⋄]/
 sy region aplstr start=/"/ end=/"/
 sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
 sy match aplquo /''/ contained
-sy match apladv /[\\\/⌿⍀¨⍨⌶&∥]/
-sy match aplcnj /[.⍣⍠⍤∘⌸]/
+sy match apladv /[\\\/⌿⍀¨⍨⌶&∥⌸]/
+sy match aplcnj /[.⍣⍠⍤∘]/
 sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/
 sy match aplzld /⍬/
 sy match apltgt /⌾/
