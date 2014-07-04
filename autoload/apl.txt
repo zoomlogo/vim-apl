@@ -206,6 +206,7 @@
 :EndFor       | k |
 :EndHold      | k |
 :EndIf        | k |
+:EndInterface | k |
 :EndNamespace | k |
 :EndProperty  | k |
 :EndRepeat    | k |
