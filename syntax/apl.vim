@@ -11,11 +11,9 @@ sy match aplquo /''/ contained
 sy match apladv /[\\\/⌿⍀¨⍨⌶&∥⌸]/
 sy match aplcnj /[.⍣⍠⍤∘]/
 sy match aplvrb /[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/
-sy match aplzld /⍬/
-sy match apltgt /⌾/
+sy match aplcns /[⍬⌾#]/
 sy match aplind /[[\];]/
 sy match aplpar /[()]/
-sy match aplnsp /#/
 sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 
 sy match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
@@ -65,7 +63,6 @@ HL aplerr error
 HL aplidn normal
 HL aplind delimiter
 HL aplkwd statement
-HL aplnsp constant
 HL aplnum number
 HL aplpar delimiter
 HL aplqid identifier
@@ -74,8 +71,6 @@ HL aplstr string
 HL aplquo specialchar
 HL aplcmd preproc
 HL aplvrb function
-HL aplzld constant
-HL apltgt constant
 delc HL
 
 let b:current_syntax = 'apl'
