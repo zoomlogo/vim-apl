@@ -31,6 +31,8 @@ unl n i
 sy match aplerr /\v⎕[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]+/
 sy match aplerr /\v((^|◇|⋄)\s*)@<=[:\)][A-Za-z]+/
 
+sy match aplkwd /\c:in\>/
+
 let ht = apl#symbolsByType
 for [t, hl] in [['N','cns'],['n','qid'],['v','vrb'],['a','adv'],['c','cnj']]
   if has_key(ht, t)
