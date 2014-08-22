@@ -19,10 +19,12 @@ sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\
 sy match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
 sy match aplqid /[⎕⍞]/
 
+sy match apllbl /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*:/
+
 " Rainbow colouring for {⍺⍵}
 let n = 10 " max nesting
 for i in reverse(range(n))
-  exe 'sy region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,'.join(map(range(n), '"apl".("BL"[v:val>i]).v:val'), ',')
+  exe 'sy region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,apllbl,'.join(map(range(n), '"apl".("BL"[v:val>i]).v:val'), ',')
   exe 'sy match aplL'.(n - i - 1).' /[⍺⍵⍶⍹∇⍫:]/'
   exe 'hi def link aplL'.i.' Special'
 endfor
@@ -65,6 +67,7 @@ HL aplerr error
 HL aplidn normal
 HL aplind delimiter
 HL aplkwd statement
+HL apllbl special
 HL aplnum number
 HL aplpar delimiter
 HL aplqid identifier
