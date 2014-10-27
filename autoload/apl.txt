@@ -104,6 +104,7 @@
 ⎕refs         | v | cross references
 ⎕r            | c | replace
 ⎕rl           | n | random link
+⎕rsi          | n | space indicator
 ⎕rtl          | n | response time limit
 ⎕s            | c | search
 ⎕save         | v | save workspace
