@@ -3,10 +3,12 @@
 # quad names
 ⎕á            | N | underscored alphabet
 ⎕a            | N | alphabet 'ABC⋯Z'
+⎕af           | v | atomic function
 ⎕ai           | N | account information
 ⎕an           | N | account name
 ⎕arbin        | v | arbitrary input
 ⎕arbout       | v | arbitrary output
+⎕arg          | n | command line arguments
 ⎕at           | v | attributes
 ⎕av           | N | atomic vector
 ⎕avu          | N | unicode atomic vector
@@ -27,14 +29,20 @@
 ⎕dmx          | n | diagnostic message
 ⎕dq           | v | dequeue events
 ⎕dr           | v | data representation
+⎕ea           | v | execute alternative
+⎕ec           | v | error control
 ⎕ed           | v | edit object
 ⎕em           | v | event message
 ⎕en           | v | event number
+⎕env          | n | environment
+⎕es           | v | event simulate
+⎕et           | n | event type
 ⎕ex           | v | expunge object
 ⎕exception    | N | exception
 ⎕export       | v | export object
 ⎕fappend      | v | file append component
 ⎕favail       | v | file available
+⎕fc           | n | format control
 ⎕fchk         | v | file check and repair
 ⎕fcopy        | v | file copy
 ⎕fcreate      | v | file create
@@ -60,9 +68,11 @@
 ⎕ftie         | v | file tie
 ⎕funtie       | v | file untie
 ⎕fx           | v | fix definition
+⎕inp          | v | here input
 ⎕instances    | v | instances
 ⎕io           | n | index origin
 ⎕kl           | v | key label
+⎕l            | n | left argument
 ⎕lc           | N | line counter
 ⎕load         | v | load workspace
 ⎕lock         | v | lock definition
@@ -99,7 +109,10 @@
 ⎕path         | n | search path
 ⎕pfkey        | v | program function key
 ⎕pp           | n | print precision
+⎕pr           | n | prompt replacement
 ⎕profile      | v | profile application
+⎕ps           | n | print style
+⎕pt           | N | print tolerance
 ⎕pw           | n | print width
 ⎕refs         | v | cross references
 ⎕r            | c | replace
@@ -122,12 +135,15 @@
 ⎕state        | v | state of object
 ⎕stop         | v | stop control
 ⎕svc          | v | shared variable control
+⎕sve          | n | shared variable event
 ⎕svo          | v | shared variable offer
 ⎕svq          | v | shared variable query
 ⎕svr          | v | shared variable retract
 ⎕svs          | v | shared variable state
+⎕syl          | n | system limits
 ⎕tc           | N | terminal control
 ⎕tcnums       | v | thread child numbers
+⎕tf           | v | transfer form
 ⎕tget         | v | get tokens
 ⎕this         | N | this space
 ⎕tid          | N | thread identity
@@ -141,7 +157,9 @@
 ⎕trap         | n | trap event
 ⎕ts           | n | time stamp
 ⎕tsync        | v | threads synchronise
+⎕tz           | n | time zone
 ⎕ucs          | v | Unicode convert
+⎕ul           | N | user load
 ⎕using        | n | using path
 ⎕vfi          | v | verify and fix input
 ⎕vr           | v | vector representation
@@ -152,6 +170,7 @@
 ⎕ws           | v | window set property
 ⎕wsid         | n | workspace identification
 ⎕wx           | n | window expose names
+⎕x            | n | axis argument
 ⎕xml          | v | extended state indicator
 ⎕xsi          | n | extended state indicator
 ⎕xt           | v | external variable
@@ -160,6 +179,7 @@
 #   )0 no arg
 #   )1 optional arg
 #   )2 required arg
+)check        | )0| check workspace integrity
 )classes      | )0| list classes
 )clear        | )0| clear the workspace
 )cmd          | )2| execute a Windows command
@@ -167,20 +187,30 @@
 )copy         | )1| copy objects from another workspace
 )cs           | )1| change current namespace
 )drop         | )1| drop named workspace
+)dump         | )1| dump workspace as Unicode
 )ed           | )2| edit object(s)
 )erase        | )2| erase object(s)
 )events       | )0| list events of GUI namespace or object
 )fns          | )1| list user defined functions
+)help         | )0| display help
+)hist         | )1| history display/clear
 )holds        | )0| display held tokens
+)host         | )2| execute host command
+)in           | )2| read transfer form file
 )lib          | )1| list workspaces in a directory
+)libs         | )1| display libraries
 )load         | )1| load a workspace
 )methods      | )0| list methods in gui namespace or object
+)more         | )0| extended error information
+)nms          | )1| display object names
 )ns           | )1| create a global namespace
 )objects      | )1| list global namespaces
 )obs          | )1| list global namespaces (alternative form)
 )off          | )0| terminate the APL session
 )ops          | )1| list user defined operators
+)out          | )2| write transfer form file
 )pcopy        | )1| perform protected copy of objects
+)pin          | )2| protected )in
 )props        | )0| list properties of gui namespace or object
 )reset        | )0| reset the state indicator
 )save         | )1| save the workspace
@@ -188,7 +218,10 @@
 )si           | )0| state indicator
 )sic          | )0| clear state indicator
 )sinl         | )0| state indicator with local name lists
+)sis          | )0| )si with syntax info
+)symbols      | )1| symbol table stats
 )tid          | )1| switch current thread identity
+)values       | )0| values details
 )vars         | )1| list user defined global variables
 )wsid         | )1| workspace identification
 )xload        | )2| load a workspace; do not execute ⎕lx
