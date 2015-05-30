@@ -60,9 +60,10 @@ fu apl#localise()
 endf
 
 if !has('gui_running') | fini | en
+let s:langbar_path = expand('<sfile>:p:h').'/langbar'
 fu s:init()
   let k = 0 " counter for menu separators
-  for s in readfile(expand('<sfile>:p:h').'/langbar')
+  for s in readfile(s:langbar_path)
     if len(s)
       let [c, d] = matchlist(s, '\v^(\S)\s*(.*)$')[1:2] " character and description
       let c1 = c == '&' ? '&&' : escape(c, '\\|.')
