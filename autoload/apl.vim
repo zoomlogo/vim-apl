@@ -41,6 +41,23 @@ fu apl#localise()
  let s=getline(i)|let s1=substitute(s,'\v\s*;\s*'.x.'\s*(;|$)','\1','')|cal setline(i,s==#s1 ? s.';'.x : s1)
 endf
 
+fu apl#ind(l)
+ let p=prevnonblank(a:l-1)|let[a,b]=[getline(p),getline(a:l)]
+ let re="\\v'[^']*'|⍝.*"|let[a,b]=[substitute(a,re,'','g'),substitute(b,re,'','g')] "rm comments and strings
+ let r=a=~?'\v^\s*:(andif|class|else\a*|for|if|interface|namespace|orif|repeat|section|select|trap|while|with)>'
+ let r-=b=~?'\v^\s*:(andif|else\a*|end\a*|orif|until)>'
+ let r+=(a=~#'\v[\{\[\(]\s*$')-(b=~#'\v^\s*[\}\]\)]')
+ retu indent(p)+s:sw()*r
+endf
+
+if exists('*shiftwidth')
+ let s:sw=function('shiftwidth')
+el
+ fu s:sw()
+  retu&sw
+ endf
+en
+
 if !has('gui_running')|fini|en
 fu s:init(f) "f:language bar file
  let k=0 "counter for menu separators
