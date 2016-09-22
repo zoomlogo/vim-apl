@@ -86,10 +86,12 @@
 ⎕ncreate      | v | native file create
 ⎕nerase       | v | native file erase
 ⎕new          | v | new instance
+⎕nget         | v | native file read
 ⎕nl           | v | name list
 ⎕nlock        | v | native file lock
 ⎕nnames       | n | native file names
 ⎕nnums        | n | native file numbers
+⎕nput         | v | native file write
 ⎕nq           | v | enqueue event
 ⎕nr           | v | nested representation
 ⎕nread        | v | native file read
