@@ -42,6 +42,7 @@
 ⍒ grade down
 
 ⍳ indices, index of
+⍸ where, interval index
 ⍷ find
 ∪ unique, union
 ∩ intersection
