@@ -1,1 +1,1 @@
-au bufread,bufnewfile *.apl,*.dyalog setf apl
+au bufread,bufnewfile *.{apl,dyalog,cd} setf apl
