@@ -6,7 +6,7 @@ let a.='qwertyuiop[]  QWERTYUIOP{} '
 let a.='asdfghjkl;''\ ASDFGHJKL:"| '
 let a.='zxcvbnm,./    ZXCVBNM<>?   '
 
-let b ='⋄¨¯<≤=≥>≠∨∧×÷ ⋄⌶⍫⍒⍋⌽⍉⊖⍟⍱⍲!⌹'
+let b ='⋄¨¯<≤=≥>≠∨∧×÷ ⌺⌶⍫⍒⍋⌽⍉⊖⍟⍱⍲!⌹'
 let b.='?⍵∊⍴~↑↓⍳○*←→  ?⍵⍷⍴⍨↑↓⍸⍥⍣⍞⍬ '
 let b.='⍺⌈⌊∥∇∆∘''⎕⍎⍕⊢ ⍺⌈⌊⊚∇∆⍤⌸⌷≡≢⊣ '
 let b.='⊂⊃∩∪⊥⊤|⍝⍀⌿    ⊂⊃∩∪⊥⊤|⍪⍙⍠   '
