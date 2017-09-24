@@ -47,6 +47,7 @@ fu apl#ind(l)
  let r=a=~?'\v^\s*:(andif|class|else\a*|for|if|interface|namespace|orif|repeat|section|select|trap|while|with)>'
  let r-=b=~?'\v^\s*:(andif|else\a*|end\a*|orif|until)>'
  let r+=(a=~#'\v[\{\[\(]\s*$')-(b=~#'\v^\s*[\}\]\)]')
+ let r+=(a=~#'^∇.')-(b=~#'^\s*∇\s*$')
  retu indent(p)+s:sw()*r
 endf
 
