@@ -2,7 +2,7 @@ if exists('b:current_syntax')|fini|en
 "APL names: [A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ]
 sy case match
 sy match aplerr /[(){}\[\]]/
-sy match aplsep /[◇⋄]/
+sy match aplsep /⋄/
 sy region aplstr start=/"/ end=/"/
 sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
 sy match aplquo /''/ contained
@@ -12,7 +12,7 @@ sy match aplvrb /[+\-×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪
 sy match aplcns /[⍬⌾#]/
 sy match aplind /[[\];]/
 sy match aplpar /[()]/
-sy match aplnum /\v\c¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(0x\x+|\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
+sy match aplnum /\v\c¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
 sy match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
 sy match aplqid /[⎕⍞]/
 sy match apllbl /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*:/
@@ -27,7 +27,7 @@ endfor
 unl n i
 
 sy match aplerr /\v⎕[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]+/
-sy match aplerr /\v((^|◇|⋄)\s*)@<=[:\)][A-Za-z]+/
+sy match aplerr /\v((^|⋄)\s*)@<=[:\)][A-Za-z]+/
 sy match aplkwd /\c:in\>/
 
 let ht=apl#symbolsByType
@@ -36,8 +36,8 @@ for [t,hl] in [['N','cns'],['n','qid'],['v','vrb'],['a','adv'],['c','cnj']]
   exe 'sy match apl'.hl.' /\v\c⎕('.join(map(filter(copy(ht[t]), 'v:val=~"^⎕"'), 'substitute(v:val,"^⎕","","")'), '|').')>/'
  en
 endfor
-exe 'sy match aplkwd /\v\c((^|◇|⋄)\s*)@<=:('.join(map(copy(ht.k),'substitute(v:val,"^:","","")'),'|').')>/'
-exe 'sy match aplcmd /\v\c((^|◇|⋄)\s*)@<=\)('.join(map(ht[')0']+ht[')1']+ht[')2'],'substitute(v:val,"^\)","","")'),'|').')>.*$/'
+exe 'sy match aplkwd /\v\c((^|⋄)\s*)@<=:('.join(map(copy(ht.k),'substitute(v:val,"^:","","")'),'|').')>/'
+exe 'sy match aplcmd /\v\c((^|⋄)\s*)@<=\)('.join(map(ht[')0']+ht[')1']+ht[')2'],'substitute(v:val,"^\)","","")'),'|').')>.*$/'
 unl ht t hl
 
 sy match aplarw /←/
