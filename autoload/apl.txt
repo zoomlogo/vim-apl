@@ -91,6 +91,7 @@
 ⎕nlock        | v | native file lock
 ⎕nnames       | n | native file names
 ⎕nnums        | n | native file numbers
+⎕nparts       | v | file name parts
 ⎕nput         | v | native file write
 ⎕nq           | v | enqueue event
 ⎕nr           | v | nested representation
