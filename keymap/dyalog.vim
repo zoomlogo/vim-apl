@@ -9,7 +9,7 @@ let a.='zxcvbnm,./    ZXCVBNM<>?   '
 let b ='⋄¨¯<≤=≥>≠∨∧×÷ ⌺⌶⍫⍒⍋⌽⍉⊖⍟⍱⍲!⌹'
 let b.='?⍵∊⍴~↑↓⍳○*←→  ?⍵⍷⍴⍨↑↓⍸⍥⍣⍞⍬ '
 let b.='⍺⌈⌊∥∇∆∘''⎕⍎⍕⊢ ⍺⌈⌊⊚∇∆⍤⌸⌷≡≢⊣ '
-let b.='⊂⊃∩∪⊥⊤|⍝⍀⌿    ⊂⊃∩∪⊥⊤|⍪⍙⍠   '
+let b.='⊂⊃∩∪⊥⊤|⍝⍀⌿    ⊆⊃∩∪⊥⊤|⍪⍙⍠   '
 
 let[A,B]=map([a,b],"split(v:val,'\\zs *')")
 for i in range(len(A))|exe escape('ln<buffer>`'.A[i].' '.B[i],'|')|endfor
