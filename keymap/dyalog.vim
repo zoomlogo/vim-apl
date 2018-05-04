@@ -11,6 +11,9 @@ let b.='?⍵∊⍴~↑↓⍳○*←→  ?⍵⍷⍴⍨↑↓⍸⍥⍣⍞⍬ '
 let b.='⍺⌈⌊∥∇∆∘''⎕⍎⍕⊢ ⍺⌈⌊⊚∇∆⍤⌸⌷≡≢⊣ '
 let b.='⊂⊃∩∪⊥⊤|⍝⍀⌿    ⊆⊃∩∪⊥⊤|⍪⍙⍠   '
 
+lno<buffer> `<space> `
+cno<buffer> `<space> `
 let[A,B]=map([a,b],"split(v:val,'\\zs *')")
-for i in range(len(A))|exe escape('ln<buffer>`'.A[i].' '.B[i],'|')|endfor
+for i in range(len(A))|exe escape('lno<buffer>`'.A[i].' '.B[i],'|')|endfor
+for i in range(len(A))|exe escape('cno<buffer>`'.A[i].' '.B[i],'|')|endfor
 unl a b A B i
