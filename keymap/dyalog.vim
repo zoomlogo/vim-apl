@@ -11,9 +11,10 @@ let b.='?⍵∊⍴~↑↓⍳○*←→  ?⍵⍷⍴⍨↑↓⍸⍥⍣⍞⍬ '
 let b.='⍺⌈⌊∥∇∆∘''⎕⍎⍕⊢ ⍺⌈⌊⊚∇∆⍤⌸⌷≡≢⊣ '
 let b.='⊂⊃∩∪⊥⊤|⍝⍀⌿    ⊆⊃∩∪⊥⊤|⍪⍙⍠   '
 
-lno<buffer> `<space> `
-cno<buffer> `<space> `
+let p=exists('g:apl_prefix_key')?g:apl_prefix_key:'`'
+exe 'lno<buffer> '.p.'<space> '.p
+exe 'cno<buffer> '.p.'<space> '.p
 let[A,B]=map([a,b],"split(v:val,'\\zs *')")
-for i in range(len(A))|exe escape('lno<buffer>`'.A[i].' '.B[i],'|')|endfor
-for i in range(len(A))|exe escape('cno<buffer>`'.A[i].' '.B[i],'|')|endfor
-unl a b A B i
+for i in range(len(A))|exe escape('lno<buffer>'.p.A[i].' '.B[i],'|')|endfor
+for i in range(len(A))|exe escape('cno<buffer>'.p.A[i].' '.B[i],'|')|endfor
+unl a b A B i p
