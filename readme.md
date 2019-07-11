@@ -8,12 +8,12 @@
 * If necessary, [setup Vundle]
 * Add `Plugin https://gitlab.com/n9n/vim-apl.git` to `.vimrc`:
 
-	`
+```
 	call vundle#begin()
 	  Plugin 'VundleVim/Vundle.vim'
 	  Plugin 'https://gitlab.com/n9n/vim-apl.git'
 	call vundle#end()
-	`
+```
 
 * Save `.vimrc` and run `vim +PluginInstall +qall`
 
