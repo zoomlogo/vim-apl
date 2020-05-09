@@ -71,6 +71,7 @@
 ⎕inp          | v | here input
 ⎕instances    | v | instances
 ⎕io           | n | index origin
+⎕json         | v | json
 ⎕kl           | v | key label
 ⎕l            | n | left argument
 ⎕lc           | N | line counter
