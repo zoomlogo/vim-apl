@@ -67,6 +67,7 @@
 . inner product
 ∘ outer product
 ⍤ rank
+⍥ over
 
 ⍞ raw I/O
 ⎕ eval'ed I/O
