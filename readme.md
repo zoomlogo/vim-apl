@@ -6,12 +6,12 @@
 ### Installation with Vundle
 
 * If necessary, [setup Vundle]
-* Add `Plugin https://gitlab.com/n9n/vim-apl.git` to `.vimrc`:
+* Add `Plugin https://gitlab.com/PyGamer0/vim-apl` to `.vimrc`:
 
 ```
 	call vundle#begin()
 	  Plugin 'VundleVim/Vundle.vim'
-	  Plugin 'https://gitlab.com/n9n/vim-apl.git'
+	  Plugin 'https://github.com/PyGamer0/vim-apl'
 	call vundle#end()
 ```
 
