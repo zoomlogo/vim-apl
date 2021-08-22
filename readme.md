@@ -6,7 +6,7 @@
 ### Installation with Vundle
 
 * If necessary, [setup Vundle]
-* Add `Plugin https://gitlab.com/PyGamer0/vim-apl` to `.vimrc`:
+* Add `Plugin https://github.com/PyGamer0/vim-apl` to `.vimrc`:
 
 ```
 	call vundle#begin()
