@@ -1,55 +1,55 @@
 if exists('b:current_syntax')|fini|en
 "APL names: [A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ]
-sy case match
-sy match aplerr /[(){}\[\]]/
-sy match aplsep /⋄/
-sy region aplstr start=/"/ end=/"/
-sy region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
-sy match aplquo /''/ contained
-sy match apladv /[\\\/⌿⍀¨⍨⌶&∥⌸]/
-sy match aplcnj /[.@∘⍠⍣⍤⍥⌺]/
-sy match aplvrb /[+\-×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/
-sy match aplcns /[⍬⌾#]/
-sy match aplind /[[\];]/
-sy match aplpar /[()]/
-sy match aplnum /\v\c¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
-sy match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
-sy match aplqid /[⎕⍞]/
-sy match apllbl /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*:/
+syntax case match
+syntax match aplerr /[(){}\[\]]/
+syntax match aplsep /⋄/
+syntax region aplstr start=/"/ end=/"/
+syntax region aplstr matchgroup=aplstr start=/'/rs=s+1 skip=/''/ end=/'/re=e-1 contains=aplquo oneline
+syntax match aplquo /''/ contained
+syntax match apladv /[\\\/⌿⍀¨⍨⌶&∥⌸]/
+syntax match aplcnj /[.@∘⍠⍣⍤⍥⌺]/
+syntax match aplvrb /[+\-×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/
+syntax match aplcns /[⍬⌾#]/
+syntax match aplind /[[\];]/
+syntax match aplpar /[()]/
+syntax match aplnum /\v\c¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞)(j¯?(\d*\.?\d+(e[+¯]?\d+)?|¯|∞))?/
+syntax match aplidn /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*/
+syntax match aplqid /[⎕⍞]/
+syntax match apllbl /[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ][A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]*:/
 
 "rainbow colouring for {⍺⍵}
 let n=10 "max nesting
 for i in reverse(range(n))
- exe 'sy region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,apllbl,'.join(map(range(n),'"apl".("BL"[v:val>i]).v:val'),',')
- exe 'sy match aplL'.(n-i-1).' /[⍺⍵⍶⍹∇⍫:]/'
- exe 'hi def link aplL'.i.' Special'
+    exec 'syntax region aplB'.i.' matchgroup=aplL'.i.' start=/{/ end=/}/ contains=TOP,apllbl,'.join(map(range(n),'"apl".("BL"[v:val>i]).v:val'),',')
+    exec 'syntax match aplL'.(n-i-1).' /[⍺⍵⍶⍹∇⍫:]/'
+    exec 'hi def link aplL'.i.' Special'
 endfor
 unl n i
 
-sy match aplerr /\v⎕[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]+/
-sy match aplerr /\v((^|⋄)\s*)@<=[:\)][A-Za-z]+/
-sy match aplkwd /\c:in\>/
+syntax match aplerr /\v⎕[A-Z_a-zÀ-ÖØ-Ýß-öø-üþ∆⍙Ⓐ-Ⓩ0-9]+/
+syntax match aplerr /\v((^|⋄)\s*)@<=[:\)][A-Za-z]+/
+syntax match aplkwd /\c:in\>/
 
 let ht=apl#symbolsByType
 for [t,hl] in [['N','cns'],['n','qid'],['v','vrb'],['a','adv'],['c','cnj']]
- if has_key(ht, t)
-  exe 'sy match apl'.hl.' /\v\c⎕('.join(map(filter(copy(ht[t]), 'v:val=~"^⎕"'), 'substitute(v:val,"^⎕","","")'), '|').')>/'
- en
+    if has_key(ht, t)
+        exe 'syntax match apl'.hl.' /\v\c⎕('.join(map(filter(copy(ht[t]), 'v:val=~"^⎕"'), 'substitute(v:val,"^⎕","","")'), '|').')>/'
+    en
 endfor
-exe 'sy match aplkwd /\v\c((^|⋄)\s*)@<=:('.join(map(copy(ht.k),'substitute(v:val,"^:","","")'),'|').')>/'
-exe 'sy match aplcmd /\v\c((^|⋄)\s*)@<=\)('.join(map(ht[')0']+ht[')1']+ht[')2'],'substitute(v:val,"^\)","","")'),'|').')>.*$/'
+exe 'syntax match aplkwd /\v\c((^|⋄)\s*)@<=:('.join(map(copy(ht.k),'substitute(v:val,"^:","","")'),'|').')>/'
+exe 'syntax match aplcmd /\v\c((^|⋄)\s*)@<=\)('.join(map(ht[')0']+ht[')1']+ht[')2'],'substitute(v:val,"^\)","","")'),'|').')>.*$/'
 unl ht t hl
 
-sy match aplarw /←/
+syntax match aplarw /←/
 if !exists('b:current_syntax')||b:current_syntax==#'apl'
- sy region aplemb matchgroup=aplglm start=/«/ end=/»/ contains=@apljs
- sy include @apljs syntax/javascript.vim
+    syntax region aplemb matchgroup=aplglm start=/«/ end=/»/ contains=@apljs
+    syntax include @apljs syntax/javascript.vim
 en
 
-sy match aplcom /\v(⍝| # |^#[! ]).*$/
-sy match aplcom /^#!\/bin\/bash\n.*$/
+syntax match aplcom /\v(⍝| # |^#[! ]).*$/
+syntax match aplcom /^#!\/bin\/bash\n.*$/
 
-sy sync fromstart
+syntax sync fromstart
 com! -nargs=+ H hi def link <args>
 H apladv type
 H aplarw statement
@@ -71,4 +71,6 @@ H aplquo specialchar
 H aplcmd preproc
 H aplvrb function
 delc H
+
+" Set the current buffer syntax to apl
 let b:current_syntax='apl'
